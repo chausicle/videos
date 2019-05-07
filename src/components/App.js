@@ -7,6 +7,10 @@ import VideoDetail from './VideoDetail'
 class App extends React.Component {
   state = { videos: [], seletedVideo: null }
 
+  componentDidMount() {
+    this.onTermSubmit('lofi')
+  }
+
   onTermSubmit = async term => {
     const response = await youtube.get('/search', {
       params: {
